@@ -115,7 +115,7 @@ namespace Cllasifier
 
             var prompt = $" List of dirs:{GetRelativeFilePaths(path,true)} ";
             MaIN.Services.Services.Models.ChatResult result1;
-            if (local)
+            if (!local)
             {
                 var model = new GeminiModel();
                 model.prompt = prompt;
