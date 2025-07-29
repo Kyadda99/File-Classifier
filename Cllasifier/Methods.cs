@@ -111,12 +111,13 @@ namespace Cllasifier
             
             """;
 
+            
 
-
-            var prompt = $" List of dirs:{GetRelativeFilePaths(path,true)} ";
             MaIN.Services.Services.Models.ChatResult result1;
             if (!local)
             {
+                var prompt = $" List of dirs:{GetRelativeFilePaths(path)} ";
+
                 var model = new GeminiModel();
                 model.prompt = prompt;
                 model.systemPrompt = systemPrompt;
@@ -127,6 +128,8 @@ namespace Cllasifier
             }
             else
             {
+                var prompt = $" List of dirs:{GetRelativeFilePaths(path,true)} ";
+
                 var model = new ModelLocal();
                 model.prompt = prompt;
                 model.systemPrompt = systemPrompt;

@@ -26,13 +26,13 @@ namespace Cllasifier
             var services = new ServiceCollection();
             services.AddSingleton<IConfiguration>(configuration);
             services.AddMaIN(configuration);
-            //services.AddTransient<ModelLocal>();
+            services.AddTransient<ModelLocal>();
 
 
             var serviceProvider = services.BuildServiceProvider();
             serviceProvider.UseMaIN();
 
-            //serviceProvider.GetRequiredService<ModelLocal>();
+            serviceProvider.GetRequiredService<ModelLocal>();
 
 
             Console.WriteLine("--- File Sorter Console Application ---");
